@@ -4,9 +4,9 @@ public class Book {
     private String author;
     private boolean isIssued;
 
-    private Long idCounter = 101L;
+    private static Long idCounter = 101L;
 
-    public Book(Long id, String title, String author, boolean isIssued){
+    public Book(String title, String author, boolean isIssued){
         this.id = idCounter++;
         this.title = title;
         this.author = author;
@@ -34,7 +34,7 @@ public class Book {
     }
 
     @Override
-    public String toString(){
-        return title + "by" + author + (isIssued ? " [Issued]" : " [Available]");
+    public String toString() {
+        return "[" + id + "] " + title + " by " + author + (isIssued ? " [Issued]" : " [Available]");
     }
 }
